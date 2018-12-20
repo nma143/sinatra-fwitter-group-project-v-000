@@ -1,0 +1,6 @@
+<p> Here is a particular tweet <p>
+<form action="/tweets/<%=@tweet.id%>/delete" method="POST">
+  <input type="text" name="content" value="<%= @tweet.content %>">
+  <a href="/tweets/:id/edit">Edit Tweet</a>
+  <button type="submit" value="submit">Delete Tweet</button>
+</form>
