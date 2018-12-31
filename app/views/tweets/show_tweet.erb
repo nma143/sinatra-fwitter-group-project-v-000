@@ -1,6 +1,17 @@
-<p> Here is a particular tweet <p>
+<p> Here is a particular tweet by <%= @tweet.user.username %>: <p>
 <form action="/tweets/<%=@tweet.id%>/delete" method="POST">
   <input type="text" name="content" value="<%= @tweet.content %>">
-  <a href="/tweets/:id/edit">Edit Tweet</a>
+  <br>
+  <br>
+
+  <a href="/tweets/<%=@tweet.id%>/edit">Edit Tweet</a>
+  <br>
+  <a href="/tweets">Go back to tweets page</a>
+  <br>
   <button type="submit" value="submit">Delete Tweet</button>
+  <br>
+
 </form>
+<!-- -->
+<!--<% if @tweet.user == current_user %> -->
+<!--< <% end %> -->
