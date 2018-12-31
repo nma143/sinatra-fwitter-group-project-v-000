@@ -4,8 +4,9 @@
 <br>
 <a href="/tweets/new"> Create a new tweet</a>
 <br>
-<a href="/logout">Log Out</a>
+<a href="/users/<%=current_user.slug %>">View only your tweets</a>
 <br>
+<a href="/logout">Log out</a>
 
 <h2> Here are all the tweets: </h2>
 
@@ -16,7 +17,7 @@
 <% else %>
   <% @tweets.each do |tweet| %>
     <div>
-      <p><%= tweet.user_id %> tweeted: <%= tweet.content %></p>
+      <p><%= User.find_name_by_id(tweet.user_id) %> tweeted: <%= tweet.content %></p>
     </div>
   <% end %>
 
