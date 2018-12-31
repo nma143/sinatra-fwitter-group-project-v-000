@@ -1,8 +1,23 @@
 <p> Welcome, <%= current_user.username %>
-<h2> Tweets </h2>
+
+<br>
+<br>
+<a href="/tweets/new"> Create a new tweet</a>
+<br>
+<a href="/logout">Log Out</a>
+<br>
+
+<h2> Here are all the tweets: </h2>
+
 
 <% @tweets.each do |tweet| %>
   <div>
     <%= tweet.content %>
   </div>
+<% end %>
+
+<% if @tweets.length==0 %>
+  <p>
+    (You have no tweets yet)
+  </p>
 <% end %>
