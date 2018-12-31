@@ -9,15 +9,15 @@
 
 <h2> Here are all the tweets: </h2>
 
-
-<% @tweets.each do |tweet| %>
-  <div>
-    <%= tweet.content %>
-  </div>
-<% end %>
-
 <% if @tweets.length==0 %>
   <p>
-    (You have no tweets yet)
+    (There are no tweets yet)
   </p>
+<% else %>
+  <% @tweets.each do |tweet| %>
+    <div>
+      <p><%= tweet.user_id %> tweeted: <%= tweet.content %></p>
+    </div>
+  <% end %>
+
 <% end %>
